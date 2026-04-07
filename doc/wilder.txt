@@ -2028,10 +2028,10 @@ wilder#popupmenu_renderer([{options}])
             Example:
 >
             function! s:should_use_full_width(ctx, result)
-              let l:expand = get(a:result.data, 'cmdline.expand', '')
-              return l:expand ==# 'buffer' ||
-                    \ l:expand ==# 'file' ||
-                    \ l:expand ==# 'dir'
+              let l:Expand = get(a:result.data, 'cmdline.expand', '')
+              return l:Expand ==# 'buffer' ||
+                    \ l:Expand ==# 'file' ||
+                    \ l:Expand ==# 'dir'
             endfunction
 
             call wilder#set_option('renderer', wilder#popupmenu_renderer({

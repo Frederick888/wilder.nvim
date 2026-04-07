@@ -53,9 +53,9 @@ function! s:buffer_status(state, ctx, result) abort
     return ''
   endif
 
-  let l:expand = get(a:result.data, 'cmdline.expand', '')
+  let l:Expand = get(a:result.data, 'cmdline.expand', '')
 
-  if l:expand !=# 'buffer' && l:expand !=# 'file' && l:expand !=# 'file_in_path'
+  if l:Expand !=# 'buffer' && l:Expand !=# 'file' && l:Expand !=# 'file_in_path'
     return ''
   endif
 

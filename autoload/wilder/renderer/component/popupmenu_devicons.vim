@@ -26,13 +26,13 @@ function! s:devicons(state, ctx, result) abort
     return ''
   endif
 
-  let l:expand = get(a:result.data, 'cmdline.expand', '')
+  let l:Expand = get(a:result.data, 'cmdline.expand', '')
 
-  if l:expand !=# 'file' &&
-        \ l:expand !=# 'file_in_path' &&
-        \ l:expand !=# 'dir' &&
-        \ l:expand !=# 'shellcmd' &&
-        \ l:expand !=# 'buffer'
+  if l:Expand !=# 'file' &&
+        \ l:Expand !=# 'file_in_path' &&
+        \ l:Expand !=# 'dir' &&
+        \ l:Expand !=# 'shellcmd' &&
+        \ l:Expand !=# 'buffer'
     return ''
   endif
 

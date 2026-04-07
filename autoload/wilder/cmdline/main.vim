@@ -256,18 +256,18 @@ function! wilder#cmdline#main#do(ctx) abort
       if a:ctx.cmdline[a:ctx.pos] ==# '+'
         if l:allow_opt
           let a:ctx.pos += 1
-          let l:expand = 'file_opt'
+          let l:Expand = 'file_opt'
         else
-          let l:expand = 'nothing'
+          let l:Expand = 'nothing'
         endif
       elseif l:allow_cmd
-        let l:expand = 'command'
+        let l:Expand = 'command'
         " ++opt must be before +cmd
         let l:allow_opt = 0
         " only 1 +cmd allowed
         let l:allow_cmd = 0
       else
-        let l:expand = 'nothing'
+        let l:Expand = 'nothing'
       endif
 
       let l:arg_start = a:ctx.pos
@@ -287,7 +287,7 @@ function! wilder#cmdline#main#do(ctx) abort
       " still in command or option
       if empty(a:ctx.cmdline[a:ctx.pos])
         let a:ctx.pos = l:arg_start
-        let a:ctx.expand = l:expand
+        let a:ctx.expand = l:Expand
         return
       endif
 

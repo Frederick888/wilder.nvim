@@ -193,12 +193,12 @@ function! wilder#highlighter#python_highlight_cpsm(ctx, opts, x, data)
 
   let l:query = a:data['query']
 
-  let l:expand = get(a:data, 'cmdline.expand', '')
-  let l:is_path = l:expand ==# 'file' ||
-        \ l:expand ==# 'file_in_path' ||
-        \ l:expand ==# 'dir' ||
-        \ l:expand ==# 'shellcmd' ||
-        \ l:expand ==# 'buffer'
+  let l:Expand = get(a:data, 'cmdline.expand', '')
+  let l:is_path = l:Expand ==# 'file' ||
+        \ l:Expand ==# 'file_in_path' ||
+        \ l:Expand ==# 'dir' ||
+        \ l:Expand ==# 'shellcmd' ||
+        \ l:Expand ==# 'buffer'
 
   let l:opts = {
         \ 'ispath': l:is_path,
@@ -228,9 +228,9 @@ function! wilder#highlighter#tag_regexp_highlighter()
 endfunction
 
 function! wilder#highlighter#tag_regexp_highlight(ctx, x, data)
-  let l:expand = get(a:data, 'cmdline.expand', '')
+  let l:Expand = get(a:data, 'cmdline.expand', '')
 
-  if l:expand !=# 'tags'
+  if l:Expand !=# 'tags'
     return 0
   endif
 
